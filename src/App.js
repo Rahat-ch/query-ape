@@ -9,6 +9,7 @@ const APIURL = "https://api.thegraph.com/subgraphs/name/rahat-ch/ape-query"
 
 export default function Home() {
   const [currAccount, setCurrAcount] = React.useState("");
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = React.useState("");
   const [token, setToken] = React.useState("");
   const [message, setMessage] = React.useState("");
@@ -31,7 +32,7 @@ url: APIURL
 
 const data = await client.query(tokensQuery).toPromise();
 
-if (data.data.tokens[0].owner.id == currAccount){
+if (data.data.tokens[0].owner.id === currAccount){
   setMessage('You are the verified owner of this Ape')
 } else {
   setMessage('You do not own this ape')
